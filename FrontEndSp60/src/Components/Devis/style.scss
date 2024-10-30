@@ -1,0 +1,78 @@
+/* Style de base pour les champs d'entrée */
+.input-field {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+    &:focus {
+      outline: none;
+      border-color: #f97316;
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+    }
+  
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  /* Styles responsive */
+  @media (min-width: 768px) {
+    /* Layout de la section principale */
+    .form-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+  
+    /* Section image */
+    .image-section {
+      flex: 1;
+    }
+  
+    /* Section formulaire */
+    .form-section {
+      flex: 1;
+      padding: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Styles pour mobiles et tablettes */
+    .form-container {
+      flex-direction: column;
+    }
+  
+    .form-section, .image-section {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    /* Ajout d'un espacement pour éviter que les champs collent aux bords de l'écran */
+    .input-field,
+    .select-field,
+    .phone-field {
+      padding: 0.65rem;
+    }
+  }
+  
+  /* Champ téléphone personnalisé */
+  .styleDivPhone .react-tel-input .form-control {
+    @extend .input-field;
+    padding-left: 3rem; /* Ajuste l'espace pour l'indicatif */
+  }
+  
+  /* Personnalisation du menu déroulant */
+  .styleDivType select {
+    @extend .input-field;
+    appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 20 20' fill='%23f97316' xmlns='http://www.w3.org/2000/svg'><path d='M10 12l-5-5h10l-5 5z'/></svg>")
+      no-repeat right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+    background-color: white;
+  }
+  
